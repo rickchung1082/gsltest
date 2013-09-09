@@ -1,10 +1,10 @@
 export TARGET_DIR := /nfs/pegaarm
-export ENV_NAME := PEGAARM
+export ENV_NAME := BEAGLE
 
-PREFIX:=/opt/gcc-linaro-arm-linux-gnueabihf-4.8-2013.08_linux
-HOST:=arm-linux-gnueabihf
-export LIB_DIR:=$(PREFIX)/$(HOST)/libc/lib/$(HOST)
-export PATH:=$(PREFIX)/bin:$(PATH)
+SYSROOT=/usr/local/oecore-i686/sysroots/i686-angstromsdk-linux
+HOST:=arm-angstrom-linux-gnueabi
+export LIB_DIR:=$(PREFIX)/lib
+export PATH:=$(SYSROOT)/usr/bin/armv7a-vfp-neon-angstrom-linux-gnueabi:$(PATH)
 CROSS_COMPILE:=$(HOST)-
 export CC:=$(CROSS_COMPILE)gcc
 export CXX:=$(CROSS_COMPILE)g++
